@@ -55,7 +55,7 @@ python test_calculators.py
 
 ### Running Tests with Docker
 
-To ensure the consistency and reliability of the Multi-Function Calculator Application, a Docker container has been set up for running the tests. The `test.Dockerfile` located at the root of the project is used to create a Docker image for testing purposes.
+To ensure the consistency and reliability of the MultiCalc Application, a Docker container has been set up for running the tests. The `test.Dockerfile` located at the root of the project is used to create a Docker image for testing purposes.
 
 Here's how you can build and run the test container:
 
