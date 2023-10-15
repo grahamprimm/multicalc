@@ -50,6 +50,7 @@ project_root/
 Run `test_calculators.py` to execute the tests:
 
 ```bash
+cd src
 python test_calculators.py
 ```
 
