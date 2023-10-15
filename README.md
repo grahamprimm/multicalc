@@ -37,11 +37,10 @@ project_root/
 │   ├── __init__.py
 │   ├── main.py
 │   ├── calculators/
-│   │   ├── __init__.py
 │   │   ├── temperature.py
 │   │   ├── compound_interest_.py
 │   │   └── slope.py
-│   └── test_calculators.py
+    └── test_calculators.py
 ```
 
 ## Testing
