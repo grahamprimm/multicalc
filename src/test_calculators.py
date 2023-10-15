@@ -1,7 +1,7 @@
 import unittest
 from main import MultiCalc
 
-class TestMultiCalc(unittest.TestCase):  # Update the class name
+class TestMultiCalc(unittest.TestCase):
     
     def test_interface_simplicity(self):
         app = MultiCalc()
