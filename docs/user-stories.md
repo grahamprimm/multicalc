@@ -10,3 +10,4 @@
 3. **Organization:** Each calculator should have its own dedicated area within the interface.
 4. **Interactivity:** The user should be able to input values, and see results within the same window.
 5. **Error Handling:** The application should handle invalid inputs gracefully and provide feedback to the user.
+6. **Area of Rectangle:** The calculate_area method takes the shape type, as well as the required parameters for the specific shape.
