@@ -52,6 +52,12 @@ class MultiCalc(tk.Tk):
         self.slope_calc.calculate_slope()
         return self.slope_calc.result.cget('text')
        
+    def calculate_inches_to_feet(self, inches):
+        feet = inches / 12.0
+        self.inches_to_feet_calc.inches_entry.delete(0, tk.END)  
+        self.inches_to_feet_calc.inches_entry.insert(0, str(inches))  
+        self.inches_to_feet_calc.convert()  
+        return self.inches_to_feet_calc.result.cget('text')  
 
     def get_widget_count(self):
         return len(self.winfo_children())  # Return the number of widgets
