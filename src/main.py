@@ -4,6 +4,7 @@ from calculators.temperature import TemperatureCalculator
 from calculators.compound_interest import CompoundInterestCalculator
 from calculators.slope import SlopeCalculator
 from calculators.currency import CurrencyCalculator
+from calculators.length import InchesToFeetCalculator
 
 class MultiCalc(tk.Tk):
     def __init__(self):
