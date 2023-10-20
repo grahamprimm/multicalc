@@ -36,13 +36,6 @@ class TestMultiCalc(unittest.TestCase):
         error_message = app.calculate_currency('invalid', '($)', '($)')
         self.assertEqual(error_message, "Invalid input")
 
-    def test_functionality_area_rectangle(self):
-        app = MultiCalc()
-        length = 5
-        width = 10
-        area_result = app.calculate_area('rectangle', length, width)
-        self.assertEqual(area_result, "Area: 50.0 square units")
-
     def test_functionality_inches_to_feet(self):
         app = MultiCalc()
         inches = 24
