@@ -7,6 +7,7 @@ A simple desktop calculator application developed with Python and Tkinter. This 
 - Temperature Calculator: Convert temperatures between Celsius and Fahrenheit.
 - Compound Interest Calculator: Calculate the future value of an investment.
 - Slope Calculator: Determine the slope of a line given two points.
+- Unit Converter:Allow users to convert various units such as length, weight, volume, or speed. 
 
 ## Requirements
 
