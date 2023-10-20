@@ -43,5 +43,11 @@ class TestMultiCalc(unittest.TestCase):
         area_result = app.calculate_area('rectangle', length, width)
         self.assertEqual(area_result, "Area: 50.0 square units")
 
+    def test_functionality_inches_to_feet(self):
+        app = MultiCalc()
+        inches = 24
+        result = app.calculate_inches_to_feet(inches)
+        self.assertEqual(result, "2.0 feet")
+
 if __name__ == "__main__":
     unittest.main()
