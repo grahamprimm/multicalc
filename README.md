@@ -1,6 +1,6 @@
 # Multi-Function Calculator
 
-A simple desktop calculator application developed with Python and Tkinter. This application provides three calculators for temperature conversion, compound interest calculation, and finding the slope of a line.
+A simple desktop calculator application developed with Python and Tkinter. This application provides three calculators for temperature conversion, inches to feet conversion, compound interest calculation, and finding the slope of a line.
 
 ## Features
 
@@ -8,6 +8,7 @@ A simple desktop calculator application developed with Python and Tkinter. This 
 - Compound Interest Calculator: Calculate the future value of an investment.
 - Slope Calculator: Determine the slope of a line given two points.
 - Unit Converter:Allow users to convert various units such as length, weight, volume, or speed. 
+- Inches to feet Converter:Allow users to convert Inches to feet. 
 
 ## Requirements
 
