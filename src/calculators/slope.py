@@ -45,7 +45,7 @@ class SlopeCalculator(tk.Frame):
             if x1 == x2:
                 self.result.config(text="Undefined (vertical line)")
             else:
-                slope = (y2 - y1) / (x2 - x1)
+                slope = round((y2 - y1) / (x2 - x1), 2)
                 self.result.config(text=f"Slope: {slope}")
         except ValueError:
             self.result.config(text="Invalid input")
