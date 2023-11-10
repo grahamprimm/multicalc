@@ -4,9 +4,7 @@ class TemperatureCalculator(tk.Frame):
     def __init__(self, master=None, **kwargs):
         super().__init__(master, **kwargs)
         self.grid()
-
         self.ERROR_STR = "Invalid input"
-        
         self.create_widgets()
 
     def create_widgets(self):
@@ -33,14 +31,18 @@ class TemperatureCalculator(tk.Frame):
         try:
             temp = float(self.temp_entry.get())
             unit = self.unit_var.get()
-            if unit == "Celsius":
-                result = temp * 9/5 + 32
-                self.result.config(text=f"{result} Fahrenheit")
-            else:
-                result = (temp - 32) * 5/9
-                self.result.config(text=f"{result} Celsius")
+            result = self.calculate_result(temp, unit)
+            self.result.config(text=result)
         except ValueError:
             self.result.config(text=self.ERROR_STR)
+
+    def calculate_result(self, temp, unit):
+        if unit == "Celsius":
+            result = temp * 9/5 + 32
+            return f"{result} Fahrenheit"
+        else:
+            result = (temp - 32) * 5/9
+            return f"{result} Celsius"
 
 if __name__ == "__main__":
     root = tk.Tk()
