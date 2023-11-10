@@ -4,6 +4,7 @@ from calculators.temperature import TemperatureCalculator
 from calculators.compound_interest import CompoundInterestCalculator
 from calculators.slope import SlopeCalculator
 from calculators.currency import CurrencyCalculator
+from calculators.length import InchesToFeetCalculator
 
 class MultiCalc(tk.Tk):
     def __init__(self):
@@ -25,6 +26,9 @@ class MultiCalc(tk.Tk):
 
         self.Currency_APP = CurrencyCalculator(self.notebook)
         self.notebook.add(self.Currency_APP, text="Currency")
+
+        self.inches_to_feet_calc = InchesToFeetCalculator(self.notebook)
+        self.notebook.add(self.inches_to_feet_calc, text="Inches to Feet")
 
     def calculate_temperature(self, temp):
         self.TempCalc_APP.temp_entry.delete(0, tk.END)  # Clear the entry
@@ -52,6 +56,12 @@ class MultiCalc(tk.Tk):
         self.Slope_APP.calculate_slope()
         return self.Slope_APP.result.cget('text')
        
+    def calculate_inches_to_feet(self, inches):
+        feet = inches / 12.0
+        self.inches_to_feet_calc.inches_entry.delete(0, tk.END)  
+        self.inches_to_feet_calc.inches_entry.insert(0, str(inches)) 
+        self.inches_to_feet_calc.convert()  
+        return self.inches_to_feet_calc.result.cget('text')   
 
     def get_widget_count(self):
         return len(self.winfo_children())  # Return the number of widgets

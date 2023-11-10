@@ -38,5 +38,11 @@ class TestMultiCalc(unittest.TestCase):
         error_message = app.calculate_slope('invalid', 'invalid')
         self.assertEqual(error_message, app.Slope_APP.ERROR_STR)
 
+    def test_functionality_inches_to_feet(self):
+        app = MultiCalc()
+        inches = 24
+        result = app.calculate_inches_to_feet(inches)
+        self.assertEqual(result, "2.0 feet")
+
 if __name__ == "__main__":
     unittest.main()
