@@ -5,6 +5,8 @@ class CompoundInterestCalculator(tk.Frame):
         super().__init__(master, **kwargs)
         self.grid()
         
+        self.ERROR_STR = "Invalid input"
+
         self.create_widgets()
 
     def create_widgets(self):
@@ -51,7 +53,7 @@ class CompoundInterestCalculator(tk.Frame):
             amount = principal * (1 + rate / times_compounded)**(times_compounded * years)
             self.result.config(text=f"${amount:.2f}")
         except ValueError:
-            self.result.config(text="Invalid input")
+            self.result.config(text=self.ERROR_STR)
 
 if __name__ == "__main__":
     root = tk.Tk()

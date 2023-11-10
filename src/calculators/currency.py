@@ -5,6 +5,8 @@ class CurrencyCalculator(tk.Frame):
         super().__init__(master, **kwargs)
         self.grid()
 
+        self.ERROR_STR = "Invalid input"
+
         self.conversiontable = [[1, 0.95, 7.32],
                                 [1.06, 1, 7.74],
                                 [0.14, 0.13, 1]]
@@ -56,7 +58,7 @@ class CurrencyCalculator(tk.Frame):
             amount = float(amount) * self.conversiontable[amount_unit][convert_to]
             self.result.config(text=f"{label[-2]} {amount}")
         except Exception as e:
-            self.result.config(text="Invalid input")
+            self.result.config(text=self.ERROR_STR)
 
 if __name__ == "__main__":
     root = tk.Tk()

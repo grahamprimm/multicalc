@@ -5,6 +5,8 @@ class SlopeCalculator(tk.Frame):
         super().__init__(master, **kwargs)
         self.grid()
         
+        self.ERROR_STR = "Invalid input"
+
         self.create_widgets()
 
     def create_widgets(self):
@@ -48,7 +50,7 @@ class SlopeCalculator(tk.Frame):
                 slope = round((y2 - y1) / (x2 - x1), 2)
                 self.result.config(text=f"Slope: {slope}")
         except ValueError:
-            self.result.config(text="Invalid input")
+            self.result.config(text=self.ERROR_STR)
 
 if __name__ == "__main__":
     root = tk.Tk()

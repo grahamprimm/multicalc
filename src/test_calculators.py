@@ -32,9 +32,11 @@ class TestMultiCalc(unittest.TestCase):
     def test_error_handling(self):
         app = MultiCalc()
         error_message = app.calculate_temperature('invalid_input')
-        self.assertEqual(error_message, "Invalid input")
+        self.assertEqual(error_message, app.TempCalc_APP.ERROR_STR)
         error_message = app.calculate_currency('invalid', '($)', '($)')
-        self.assertEqual(error_message, "Invalid input")
+        self.assertEqual(error_message, app.Currency_APP.ERROR_STR)
+        error_message = app.calculate_slope('invalid', 'invalid')
+        self.assertEqual(error_message, app.Slope_APP.ERROR_STR)
 
 if __name__ == "__main__":
     unittest.main()

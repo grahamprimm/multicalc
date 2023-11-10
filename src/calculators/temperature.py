@@ -4,6 +4,8 @@ class TemperatureCalculator(tk.Frame):
     def __init__(self, master=None, **kwargs):
         super().__init__(master, **kwargs)
         self.grid()
+
+        self.ERROR_STR = "Invalid input"
         
         self.create_widgets()
 
@@ -38,7 +40,7 @@ class TemperatureCalculator(tk.Frame):
                 result = (temp - 32) * 5/9
                 self.result.config(text=f"{result} Celsius")
         except ValueError:
-            self.result.config(text="Invalid input")
+            self.result.config(text=self.ERROR_STR)
 
 if __name__ == "__main__":
     root = tk.Tk()

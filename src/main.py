@@ -14,43 +14,43 @@ class MultiCalc(tk.Tk):
         self.notebook = ttk.Notebook(self)
         self.notebook.pack(fill=tk.BOTH, expand=True)
 
-        self.temp_calc = TemperatureCalculator(self.notebook)
-        self.notebook.add(self.temp_calc, text="Temperature")
+        self.TempCalc_APP = TemperatureCalculator(self.notebook)
+        self.notebook.add(self.TempCalc_APP, text="Temperature")
 
-        self.compound_interest_calc = CompoundInterestCalculator(self.notebook)
-        self.notebook.add(self.compound_interest_calc, text="Compound Interest")
+        self.CompInt_APP = CompoundInterestCalculator(self.notebook)
+        self.notebook.add(self.CompInt_APP, text="Compound Interest")
 
-        self.slope_calc = SlopeCalculator(self.notebook)
-        self.notebook.add(self.slope_calc, text="Slope")
+        self.Slope_APP = SlopeCalculator(self.notebook)
+        self.notebook.add(self.Slope_APP, text="Slope")
 
-        self.currency_calc = CurrencyCalculator(self.notebook)
-        self.notebook.add(self.currency_calc, text="Currency")
+        self.Currency_APP = CurrencyCalculator(self.notebook)
+        self.notebook.add(self.Currency_APP, text="Currency")
 
     def calculate_temperature(self, temp):
-        self.temp_calc.temp_entry.delete(0, tk.END)  # Clear the entry
-        self.temp_calc.temp_entry.insert(0, str(temp))  # Set the new value
-        self.temp_calc.convert()  # Trigger the conversion
-        return self.temp_calc.result.cget('text')  # Return the result text
+        self.TempCalc_APP.temp_entry.delete(0, tk.END)  # Clear the entry
+        self.TempCalc_APP.temp_entry.insert(0, str(temp))  # Set the new value
+        self.TempCalc_APP.convert()  # Trigger the conversion
+        return self.TempCalc_APP.result.cget('text')  # Return the result text
     
     def calculate_currency(self, amount, curr1, curr2):
-        self.currency_calc.amount_e.delete(0, tk.END)
-        self.currency_calc.amount_e.insert(0, str(amount))
-        self.currency_calc.unit_var1.set(curr1)
-        self.currency_calc.unit_var2.set(curr2)
-        self.currency_calc.convert()
-        return self.currency_calc.result.cget('text')
+        self.Currency_APP.amount_e.delete(0, tk.END)
+        self.Currency_APP.amount_e.insert(0, str(amount))
+        self.Currency_APP.unit_var1.set(curr1)
+        self.Currency_APP.unit_var2.set(curr2)
+        self.Currency_APP.convert()
+        return self.Currency_APP.result.cget('text')
     
     def calculate_slope(self, p1, p2):
-        self.slope_calc.x1_entry.delete(0, tk.END)
-        self.slope_calc.x1_entry.insert(0, str(p1[0]))
-        self.slope_calc.x2_entry.delete(0, tk.END)
-        self.slope_calc.x2_entry.insert(0, str(p2[0]))
-        self.slope_calc.y1_entry.delete(0, tk.END)
-        self.slope_calc.y1_entry.insert(0, str(p1[1]))
-        self.slope_calc.y2_entry.delete(0, tk.END)
-        self.slope_calc.y2_entry.insert(0, str(p2[1]))
-        self.slope_calc.calculate_slope()
-        return self.slope_calc.result.cget('text')
+        self.Slope_APP.x1_entry.delete(0, tk.END)
+        self.Slope_APP.x1_entry.insert(0, str(p1[0]))
+        self.Slope_APP.x2_entry.delete(0, tk.END)
+        self.Slope_APP.x2_entry.insert(0, str(p2[0]))
+        self.Slope_APP.y1_entry.delete(0, tk.END)
+        self.Slope_APP.y1_entry.insert(0, str(p1[1]))
+        self.Slope_APP.y2_entry.delete(0, tk.END)
+        self.Slope_APP.y2_entry.insert(0, str(p2[1]))
+        self.Slope_APP.calculate_slope()
+        return self.Slope_APP.result.cget('text')
        
 
     def get_widget_count(self):
