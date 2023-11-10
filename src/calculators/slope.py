@@ -4,29 +4,12 @@ class SlopeCalculator(tk.Frame):
     def __init__(self, master=None, **kwargs):
         super().__init__(master, **kwargs)
         self.grid()
-        
         self.ERROR_STR = "Invalid input"
-
         self.create_widgets()
 
     def create_widgets(self):
-        self.point1_label = tk.Label(self, text="Point 1 (x1, y1):")
-        self.point1_label.grid(row=0, column=0)
-
-        self.x1_entry = tk.Entry(self)
-        self.x1_entry.grid(row=0, column=1)
-
-        self.y1_entry = tk.Entry(self)
-        self.y1_entry.grid(row=0, column=2)
-
-        self.point2_label = tk.Label(self, text="Point 2 (x2, y2):")
-        self.point2_label.grid(row=1, column=0)
-
-        self.x2_entry = tk.Entry(self)
-        self.x2_entry.grid(row=1, column=1)
-
-        self.y2_entry = tk.Entry(self)
-        self.y2_entry.grid(row=1, column=2)
+        self.create_point_entry("Point 1 (x1, y1):", 0)
+        self.create_point_entry("Point 2 (x2, y2):", 1)
 
         self.calculate_button = tk.Button(self, text="Calculate Slope", command=self.calculate_slope)
         self.calculate_button.grid(row=2, columnspan=3)
@@ -36,6 +19,20 @@ class SlopeCalculator(tk.Frame):
 
         self.result = tk.Label(self)
         self.result.grid(row=3, column=1, columnspan=2)
+
+    def create_point_entry(self, text, row):
+        label = tk.Label(self, text=text)
+        label.grid(row=row, column=0)
+
+        x_entry = tk.Entry(self)
+        x_entry.grid(row=row, column=1)
+
+        y_entry = tk.Entry(self)
+        y_entry.grid(row=row, column=2)
+
+        setattr(self, f"x{row + 1}_entry", x_entry)
+        setattr(self, f"y{row + 1}_entry", y_entry)
+        setattr(self, f"point{row + 1}_label", label)  # Store label as an attribute
 
     def calculate_slope(self):
         try:
