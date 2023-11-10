@@ -5,6 +5,8 @@ class InchesToFeetCalculator(tk.Frame):
         super().__init__(master, **kwargs)
         self.grid()
 
+        self.ERROR_STR = "Invalid input"
+
         self.create_widgets()
 
     def create_widgets(self):
@@ -28,8 +30,8 @@ class InchesToFeetCalculator(tk.Frame):
             inches = float(self.inches_entry.get())
             feet = inches / 12
             self.result.config(text=f"{feet} feet")
-        except ValueError:
-            self.result.config(text="Invalid input")
+        except Exception as e:
+            self.result.config(text=self.ERROR_STR)
 
 if __name__ == "__main__":
     root = tk.Tk()
